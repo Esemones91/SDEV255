@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figure 3.7</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+
+<script type="module">
+    import Counter from "./counter.js";
+
+    const app = Vue.createApp({
+        components: {
+            Counter
+        },
+        template: "<Counter />"
+    });
+
+    app.mount("#app");
+</script>
+</html>
