@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue Counter App</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+  </body>
+
+  <script type="module">
+    import Counter from "./counter2.js";
+
+    const app = Vue.createApp({
+      components: {
+        Counter
+      },
+      template: "<Counter></Counter>"
+    });
+
+    app.mount("#app");
+  </script>
+</html>
