@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <style type="text/css">
+        .fade-leave-from {
+            font-size: 16px;
+        }
+        .fade-leave-to {
+            font-size: 0px;
+        }
+        .fade-leave-active,
+        .fade-enter-active {
+            transition: all 2s;
+        }
+        .fade-enter-from {
+            font-size: 0px;
+        }
+        .fade-enter-to {
+            font-size: 16px;
+        } 
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+
+<script>
+    var app = Vue.createApp({
+        data() {
+            return {
+                show: true,
+                paragraphs: ["Paragraph 1", "Paragraph 2"]
+            };
+        },
+        template: `
+            <div>
+                <button @click="show=!show">Produce the effect</button>
+                <transition-group name="fade">
+                    <p v-for="(paragraph, index) in (show ? paragraphs : [])" :key="index">
+                        {{ paragraph }}
+                    </p>
+                </transition-group>
+            </div>
+        `,
+    });
+
+    var vm = app.mount("#app");
+</script>
+</html>
